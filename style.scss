@@ -1,5 +1,95 @@
-.header{
-    background-color: #f5f5f5;
-    padding: 20px;
+// ========= - imports - =====================//
+
+//@use '../_normalize.scss'; // for win
+@import './_normalize.scss'; // for Mac
+//@import '../_fonts.scss';
+@import './_variables.scss';
+//@import "../normalize.scss/normalize";
+//@include normalize();
+//@use 'normalize';
+
+//=======================================================//
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    transition: 0.5s;
+    scroll-behavior: smooth;
+    
+}
+
+a:hover,
+a:visited,
+a:link,
+a:active {
+    text-decoration: none;
+    //color: inherit;
+}
+
+li {
+    text-decoration: none;
+    list-style-type: none;
+}
+//=======================================================//
+
+
+
+.header {
+    display: flex;
+    flex-direction: column;
+    //background-color: red;
+    padding: 0 20px;
     text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    max-width: 1280px;
+    border-radius: 15px;
+    border: solid 1px $color-border;
+    margin: 20px auto;
+}
+
+.header-text{
+    margin: 0;
+    padding: 0; 
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    //background-color: red;
+    padding: 0 20px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    border-radius: 15px;
+    border: solid 1px $color-border;
+
+}
+
+.keyboard {
+    //background-color: red;
+    width: 100%;
+    height: auto;
+}
+
+.key_normal{
+    width: 100px;
+    height: 100px;
+}
+
+.key_fn_long {
+
+}
+
+.key_fn_short{
+
+}
+.key_space{
+
 }
