@@ -441,16 +441,15 @@ body {
 }
 
 .container {
-  max-width: 1280px;
+  gap: 3px;
+  flex-wrap: wrap;
+  max-width: 1150px;
   margin: 0 auto;
   padding: 0;
   display: flex;
   flex-direction: row;
   background-color: #2a9d8f;
-  padding: 0 20px;
   text-align: center;
-  justify-content: center;
-  align-items: center;
   height: 500px;
   border-radius: 15px;
   border: solid 2px #f4a261;
@@ -476,11 +475,12 @@ body {
   letter-spacing: 0.06em;
   /* color-dark-3xl */
   color: #e9c46a;
-  width: 100px;
-  height: 100px;
+  width: 70px;
+  height: 70px;
 }
 .key_normal:hover {
   background-color: #e76f51;
+  color: #264653;
 }
 
 .key_fn_long {
@@ -498,11 +498,12 @@ body {
   letter-spacing: 0.06em;
   /* color-dark-3xl */
   color: #e9c46a;
-  width: 300px;
-  height: 100px;
+  width: 210px;
+  height: 70px;
 }
 .key_fn_long:hover {
   background-color: #e76f51;
+  color: #264653;
 }
 
 .key_fn_short {
@@ -520,11 +521,12 @@ body {
   letter-spacing: 0.06em;
   /* color-dark-3xl */
   color: #e9c46a;
-  width: 200px;
-  height: 100px;
+  width: 140px;
+  height: 70px;
 }
 .key_fn_short:hover {
   background-color: #e76f51;
+  color: #264653;
 }
 
 .key_space {
@@ -542,9 +544,10 @@ body {
   letter-spacing: 0.06em;
   /* color-dark-3xl */
   color: #e9c46a;
-  width: 600px;
-  height: 100px;
+  width: 420px;
+  height: 70px;
 }
 .key_space:hover {
   background-color: #e76f51;
+  color: #264653;
 }/*# sourceMappingURL=style.css.map */
