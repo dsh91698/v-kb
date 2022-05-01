@@ -17,8 +17,21 @@ function createKeyboard() {
     let keyboard = createNewElement('div', 'keyboard', '');
     const keyboardContainer = createNewElement('div', 'container', '');
     keyboard.append(keyboardContainer);
+    let a = createSingleKey();
+    keyboardContainer.append(a);
+    let b = createSingleKey('key_normal', 'w');
+    keyboardContainer.append(b);
+    createSingleKey();
     document.body.append(keyboard);
 }
 
 createKeyboard();
+
+function createSingleKey(className = 'key_normal', text = 'q') {
+    const key = createNewElement('div', className, text);
+    return key;
+}
+
+
+
 

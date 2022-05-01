@@ -393,6 +393,10 @@ th {
   padding: 0;
 }
 
+/* SCSS HEX */
+/* SCSS HSL */
+/* SCSS RGB */
+/* SCSS Gradient */
 *,
 *:before,
 *:after {
@@ -413,6 +417,10 @@ li {
   list-style-type: none;
 }
 
+body {
+  background-color: #264653;
+}
+
 .header {
   display: flex;
   flex-direction: column;
@@ -423,7 +431,7 @@ li {
   height: 200px;
   max-width: 1280px;
   border-radius: 15px;
-  border: solid 1px black;
+  border: solid 2px #f4a261;
   margin: 20px auto;
 }
 
@@ -438,13 +446,14 @@ li {
   padding: 0;
   display: flex;
   flex-direction: row;
+  background-color: #2a9d8f;
   padding: 0 20px;
   text-align: center;
   justify-content: center;
   align-items: center;
   height: 500px;
   border-radius: 15px;
-  border: solid 1px black;
+  border: solid 2px #f4a261;
 }
 
 .keyboard {
@@ -453,6 +462,89 @@ li {
 }
 
 .key_normal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #264653;
+  border-radius: 10px;
+  border: 1px solid #f4a261;
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 22px;
+  letter-spacing: 0.06em;
+  /* color-dark-3xl */
+  color: #e9c46a;
   width: 100px;
   height: 100px;
+}
+.key_normal:hover {
+  background-color: #e76f51;
+}
+
+.key_fn_long {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #264653;
+  border-radius: 10px;
+  border: 1px solid #f4a261;
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 22px;
+  letter-spacing: 0.06em;
+  /* color-dark-3xl */
+  color: #e9c46a;
+  width: 300px;
+  height: 100px;
+}
+.key_fn_long:hover {
+  background-color: #e76f51;
+}
+
+.key_fn_short {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #264653;
+  border-radius: 10px;
+  border: 1px solid #f4a261;
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 22px;
+  letter-spacing: 0.06em;
+  /* color-dark-3xl */
+  color: #e9c46a;
+  width: 200px;
+  height: 100px;
+}
+.key_fn_short:hover {
+  background-color: #e76f51;
+}
+
+.key_space {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #264653;
+  border-radius: 10px;
+  border: 1px solid #f4a261;
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 22px;
+  letter-spacing: 0.06em;
+  /* color-dark-3xl */
+  color: #e9c46a;
+  width: 600px;
+  height: 100px;
+}
+.key_space:hover {
+  background-color: #e76f51;
 }/*# sourceMappingURL=style.css.map */

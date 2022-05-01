@@ -7,16 +7,16 @@
 //@import "../normalize.scss/normalize";
 //@include normalize();
 //@use 'normalize';
+//----------------------------------------------------------------------------------------
 
 //=======================================================//
-
 *,
 *:before,
 *:after {
     box-sizing: border-box;
     transition: 0.5s;
     scroll-behavior: smooth;
-    
+
 }
 
 a:hover,
@@ -31,9 +31,61 @@ li {
     text-decoration: none;
     list-style-type: none;
 }
+
+body {
+    background-color: $color-background;
+}
+
+//----------------------------------------------------------------------------------------------------
+
+//======= Mixins ================================================//
+//================== - Mixins - ===================================//
+@mixin flexbox-center-all() {
+    display: flex;
+    align-items: flex-end;
+    //justify-items: center;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    text-decoration: none;
+}
+
+@mixin button() {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: $color-background;
+    border-radius: 10px;
+    border: 1px solid $color-border;
+
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 22px;
+    letter-spacing: 0.06em;
+
+    /* color-dark-3xl */
+    color: $color-font; // font color
+
+    &:hover {
+        background-color: $color-hover;
+    }
+}
+
+@mixin flexbox-row() {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+//--------------------------------------------------------------------------------------------
 //=======================================================//
-
-
+//---------------------------------------------------------------------------------------------------------
+//=======================================================//
 
 .header {
     display: flex;
@@ -46,13 +98,13 @@ li {
     height: 200px;
     max-width: 1280px;
     border-radius: 15px;
-    border: solid 1px $color-border;
+    border: solid $size-border-main $color-border;
     margin: 20px auto;
 }
 
-.header-text{
+.header-text {
     margin: 0;
-    padding: 0; 
+    padding: 0;
 }
 
 .container {
@@ -61,35 +113,42 @@ li {
     padding: 0;
     display: flex;
     flex-direction: row;
-    //background-color: red;
+    background-color: $color-background-keyboard;
     padding: 0 20px;
     text-align: center;
     justify-content: center;
     align-items: center;
     height: 500px;
     border-radius: 15px;
-    border: solid 1px $color-border;
+    border: solid $size-border-main $color-border;
 
 }
 
 .keyboard {
-    //background-color: red;
     width: 100%;
     height: auto;
 }
 
-.key_normal{
-    width: 100px;
-    height: 100px;
+.key_normal {
+    @include button();
+    width: $size-key-normal-width;
+    height: $size-key-normal-height;
 }
 
 .key_fn_long {
-
+    @include button();
+    width: $size-key-fn-long-width;
+    height: $size-key-normal-height;
 }
 
-.key_fn_short{
-
+.key_fn_short {
+    @include button();
+    width: $size-key-fn-short-width;
+    height: $size-key-normal-height;
 }
-.key_space{
 
+.key_space {
+    @include button();
+    width: $size-key-space-width;
+    height: $size-key-normal-height;
 }
