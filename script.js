@@ -151,7 +151,244 @@ const keysAll = {
             "location": 0,
             "description": "tab",
             "unicode": "↹"
+        },
+        key_q: {
+            "key": "q",
+            "keyCode": 81,
+            "which": 81,
+            "code": "KeyQ",
+            "location": 0,
+            "description": "q"
+        },
+        key_w: {
+            "key": "w",
+            "keyCode": 87,
+            "which": 87,
+            "code": "KeyW",
+            "location": 0,
+            "description": "w"
+        },
+        key_e: {
+            "key": "e",
+            "keyCode": 69,
+            "which": 69,
+            "code": "KeyE",
+            "location": 0,
+            "description": "e"
+        },
+        key_r: {
+            "key": "r",
+            "keyCode": 82,
+            "which": 82,
+            "code": "KeyR",
+            "location": 0,
+            "description": "r"
+        },
+        key_t: {
+            "key": "t",
+            "keyCode": 84,
+            "which": 84,
+            "code": "KeyT",
+            "location": 0,
+            "description": "t"
+        },
+        key_y: {
+            "key": "y",
+            "keyCode": 89,
+            "which": 89,
+            "code": "KeyY",
+            "location": 0,
+            "description": "y"
+        },
+        key_u: {
+            "key": "u",
+            "keyCode": 85,
+            "which": 85,
+            "code": "KeyU",
+            "location": 0,
+            "description": "u"
+        },
+        key_i: {
+            "key": "i",
+            "keyCode": 73,
+            "which": 73,
+            "code": "KeyI",
+            "location": 0,
+            "description": "i"
+        },
+        key_o: {
+            "key": "o",
+            "keyCode": 79,
+            "which": 79,
+            "code": "KeyO",
+            "location": 0,
+            "description": "o"
+        },
+        key_p: {
+            "key": "p",
+            "keyCode": 80,
+            "which": 80,
+            "code": "KeyP",
+            "location": 0,
+            "description": "p"
+        },
+        key_bracket_left: {
+            "key": "[",
+            "keyCode": 160,
+            "which": 160,
+            "code": "BracketLeft",
+            "location": 0,
+            "altKey": false,
+            "ctrlKey": false,
+            "metaKey": false,
+            "shiftKey": false,
+            "description": "^"
+        },
+        key_bracket_right: {
+            "key": "]",
+            "keyCode": 221,
+            "which": 221,
+            "code": "BracketRight",
+            "location": 0,
+            "description": "close bracket / å"
+        },
+        key_backslash: {
+            "key": "\\",
+            "keyCode": 220,
+            "which": 220,
+            "code": "Backslash",
+            "location": 0,
+            "description": "back slash"
+        },
+        //==========3d row ===============================================//
+        key_capslock: {
+        "className": "key_fn_short",
+        "key": "CapsLock",
+        "keyCode": 20,
+        "which": 20,
+        "code": "CapsLock",
+        "location": 0,
+        "description": "caps lock",
+        "unicode": "⇪"
+        },
+        key_a: {
+            "key": "a",
+            "keyCode": 65,
+            "which": 65,
+            "code": "KeyA",
+            "location": 0,
+            "description": "a"
+        },
+        key_s: {
+            "key": "s",
+            "keyCode": 83,
+            "which": 83,
+            "code": "KeyS",
+            "location": 0,
+            "description": "s"
+        },
+        key_d: {
+            "key": "d",
+            "keyCode": 68,
+            "which": 68,
+            "code": "KeyD",
+            "location": 0,
+            "description": "d"
+        },
+        key_f: {
+            "key": "f",
+            "keyCode": 70,
+            "which": 70,
+            "code": "KeyF",
+            "location": 0,
+            "description": "f"
+        },
+        key_g: {
+            "key": "g",
+            "keyCode": 71,
+            "which": 71,
+            "code": "KeyG",
+            "location": 0,
+            "description": "g"
+        },
+        key_h: {
+            "key": "h",
+            "keyCode": 72,
+            "which": 72,
+            "code": "KeyH",
+            "location": 0,
+            "description": "h"
+        },
+        key_j: {
+            "key": "j",
+            "keyCode": 74,
+            "which": 74,
+            "code": "KeyJ",
+            "location": 0,
+            "description": "j"
+        },
+        key_k: {
+            "key": "k",
+            "keyCode": 75,
+            "which": 75,
+            "code": "KeyK",
+            "location": 0,
+            "altKey": true,
+            "ctrlKey": false,
+            "metaKey": true,
+            "shiftKey": false,
+            "description": "k"
+        },
+        key_l: {
+            "key": "l",
+            "keyCode": 76,
+            "which": 76,
+            "code": "KeyL",
+            "location": 0,
+            "altKey": true,
+            "ctrlKey": false,
+            "metaKey": true,
+            "shiftKey": false,
+            "description": "l"
+        },
+        key_semicolon: {
+            "key": ";",
+            "keyCode": 59,
+            "which": 59,
+            "code": "Semicolon",
+            "location": 0,
+            "description": "semicolon (firefox), equals"
+        },
+        key_quote: {
+            "key": "'",
+            "keyCode": 222,
+            "which": 222,
+            "code": "Quote",
+            "location": 0,
+            "description": "single quote / ø / ä"
+        },
+        key_enter: {
+            "className": "key_fn_short",
+            "key": "Enter",
+            "keyCode": 13,
+            "which": 13,
+            "code": "Enter",
+            "location": 0,
+            "description": "Enter / Return",
+            "unicode": "↵"
+        },
+        //==========4th row ===============================================//
+        key_shift_left: {
+            "className": "key_fn_long",
+            "key": "Shift",
+            "keyCode": 16,
+            "which": 16,
+            "code": "ShiftLeft",
+            "location": 1,
+            "description": "shift",
+            "unicode": "⇧"
            },
+        
     },
     //=================RU======================================================//
     ru: {},

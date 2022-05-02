@@ -450,6 +450,8 @@ body {
   flex-direction: row;
   background-color: #2a9d8f;
   text-align: center;
+  justify-content: center;
+  align-items: center;
   height: 500px;
   border-radius: 15px;
   border: solid 2px #f4a261;
