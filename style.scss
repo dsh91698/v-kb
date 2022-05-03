@@ -162,3 +162,18 @@ body {
     width: $size-key-space-width;
     height: $size-key-normal-height;
 }
+
+.textarea{
+    white-space: pre-wrap;
+    display: flex;
+    text-align: left;
+    width: 98%;
+    height: 50%;
+    font-size: 25px;
+    background-color: $color-background-keyboard;
+    overflow: hidden;
+}
+
+.CL_on{
+background-color: $color-CL_on;
+}

@@ -575,4 +575,19 @@ body {
 .key_space:hover {
   background-color: #e76f51;
   color: #264653;
+}
+
+.textarea {
+  white-space: pre-wrap;
+  display: flex;
+  text-align: left;
+  width: 98%;
+  height: 50%;
+  font-size: 25px;
+  background-color: #2a9d8f;
+  overflow: hidden;
+}
+
+.CL_on {
+  background-color: green;
 }/*# sourceMappingURL=style.css.map */

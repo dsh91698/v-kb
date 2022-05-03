@@ -471,7 +471,7 @@ export const keysAll = {
             "description": "forward slash / ç"
         },
         key_arrow_up: {
-            "key": "Up",
+            "key": "▲",
             "keyCode": 38,
             "which": 38,
             "code": "ArrowUp",
@@ -562,7 +562,7 @@ export const keysAll = {
             "unicode": "⎇ / ⌥"
         },
         key_arrow_left: {
-            "key": "Left",
+            "key": "ᐊ",
             "keyCode": 37,
             "which": 37,
             "code": "ArrowLeft",
@@ -574,7 +574,7 @@ export const keysAll = {
             "repeat": false
            },
            key_arrow_down: {
-            "key": "Down",
+            "key": "▼",
             "keyCode": 40,
             "which": 40,
             "code": "ArrowDown",
@@ -587,7 +587,7 @@ export const keysAll = {
            },
 
         key_arrow_right: {
-            "key": "Right",
+            "key": "ᐅ",
             "keyCode": 39,
             "which": 39,
             "code": "ArrowRight",
