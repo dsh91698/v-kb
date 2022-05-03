@@ -12,8 +12,8 @@ function createNewElement(tag, className, text) {
 }
 
 let header = createNewElement('header', 'header', '');
-let headerText = createNewElement('h1', 'header-text', 'Virtual keyboard task'); // header on top
-header.append(headerText);
+//let headerText = createNewElement('h1', 'header-text', 'Virtual keyboard task'); // header on top
+//header.append(headerText);
 let textArea = createNewElement('div', 'textarea', ''); // place for text
 header.append(textArea);
 document.body.prepend(header);

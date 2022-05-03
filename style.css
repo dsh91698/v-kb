@@ -394,8 +394,8 @@ th {
 }
 
 /* SCSS HEX */
-/* SCSS HSL */
-/* SCSS RGB */
+/* SCSS HEX */
+/* SCSS Gradient */
 /* SCSS Gradient */
 *,
 *:before,
@@ -418,7 +418,7 @@ li {
 }
 
 body {
-  background-color: #264653;
+  background: #264653;
 }
 
 .header {
@@ -580,11 +580,16 @@ body {
 .textarea {
   white-space: pre-wrap;
   display: flex;
+  padding: 0 10px;
   text-align: left;
   width: 98%;
-  height: 50%;
+  height: 80%;
   font-size: 25px;
-  background-color: #2a9d8f;
+  line-height: 31px;
+  letter-spacing: 0.07em;
+  color: #001219;
+  border-radius: 15px;
+  background-color: #EE9B00;
   overflow: hidden;
 }
 

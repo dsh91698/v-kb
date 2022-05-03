@@ -33,7 +33,9 @@ li {
 }
 
 body {
-    background-color: $color-background;
+    //background-color: $color-background;
+    background: $color-background;
+
 }
 
 //----------------------------------------------------------------------------------------------------
@@ -57,8 +59,8 @@ body {
     align-items: center;
 
     background-color: $color-background;
-    border-radius: 10px;
-    border: 1px solid $color-border;
+    border-radius: $border-radius-key;
+    border: $size-border-key solid $color-border;
 
     font-family: 'Georgia';
     font-style: normal;
@@ -98,7 +100,7 @@ body {
     align-items: center;
     height: 200px;
     max-width: 1280px;
-    border-radius: 15px;
+    border-radius: $border-radius;
     border: solid $size-border-main $color-border;
     margin: 20px auto;
 }
@@ -122,7 +124,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 500px;
-    border-radius: 15px;
+    border-radius: $border-radius;
     border: solid $size-border-main $color-border;
 
 }
@@ -165,12 +167,22 @@ body {
 
 .textarea{
     white-space: pre-wrap;
+
     display: flex;
+    padding: 0 10px;
     text-align: left;
+
     width: 98%;
-    height: 50%;
+    height: 80%;
+
     font-size: 25px;
-    background-color: $color-background-keyboard;
+    line-height: 31px;
+    letter-spacing: 0.07em;
+    color: $color-font-textarea;
+
+    border-radius: $border-radius;
+    background-color: $color-background-textarea;
+
     overflow: hidden;
 }
 
