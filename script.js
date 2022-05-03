@@ -41,7 +41,8 @@ function createKeyboard(langv = 'en') {
     document.body.append(keyboard);
 }
 
-createKeyboard();
+createKeyboard('en');
+//createKeyboard('ru');
 
 function createSingleKey(className = 'key_normal', text = 'q') {
     const key = createNewElement('div', className, text);
@@ -51,7 +52,7 @@ function createSingleKey(className = 'key_normal', text = 'q') {
 // ================================================================================//
 const keyboard = document.querySelector('.keyboard');
 keyboard.addEventListener('click', (event) => {
-    console.log(event.target.dataset.code);
+    console.log(event.target.dataset.code );
 });
 
 

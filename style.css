@@ -443,7 +443,7 @@ body {
 .container {
   gap: 3px;
   flex-wrap: wrap;
-  max-width: 1150px;
+  max-width: 1190px;
   margin: 0 auto;
   padding: 0;
   display: flex;
@@ -527,6 +527,29 @@ body {
   height: 70px;
 }
 .key_fn_short:hover {
+  background-color: #e76f51;
+  color: #264653;
+}
+
+.key_fn_shorter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #264653;
+  border-radius: 10px;
+  border: 1px solid #f4a261;
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 22px;
+  letter-spacing: 0.06em;
+  /* color-dark-3xl */
+  color: #e9c46a;
+  width: 105px;
+  height: 70px;
+}
+.key_fn_shorter:hover {
   background-color: #e76f51;
   color: #264653;
 }

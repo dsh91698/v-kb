@@ -29,9 +29,12 @@ $size-key-normal-height: 70px;
 
 $size-key-fn-long-width: $size-key-normal-width*3;// enter, shift, caps-lock
 $size-key-fn-short-width:$size-key-normal-width*2; // control-key
+$size-key-fn-shorter-width:$size-key-normal-width*1.5; // alt-key
+
 
 $size-key-space-width: $size-key-normal-width*6;// space
 //-------------------------------------------------------------------------
+$size-keyboard-width: $size-key-normal-width*17;
 
 
 

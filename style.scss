@@ -111,7 +111,7 @@ body {
 .container {
     gap: 3px;
     flex-wrap: wrap;
-    max-width: 1150px;
+    max-width: $size-keyboard-width;
     margin: 0 auto;
     padding: 0;
     display: flex;
@@ -149,6 +149,13 @@ body {
     width: $size-key-fn-short-width;
     height: $size-key-normal-height;
 }
+
+.key_fn_shorter {
+    @include button();
+    width: $size-key-fn-shorter-width;
+    height: $size-key-normal-height;
+}
+
 
 .key_space {
     @include button();

@@ -2,7 +2,7 @@
 export const keysAll = {
     //===============================================================================//
     en: {
-        key_0: {
+        key_00: {
             "className": "key_normal",
             "key": "`",
             "keyCode": 192,
@@ -40,7 +40,7 @@ export const keysAll = {
             "location": 0,
             "description": "3 Key",
             "unicode": "③"
-           },
+        },
         key_4: {
             "className": "key_normal",
             "key": "4",
@@ -80,7 +80,7 @@ export const keysAll = {
             "location": 0,
             "description": "7 Key",
             "unicode": "⑦"
-           },
+        },
         key_8: {
             "className": "key_normal",
             "key": "8",
@@ -260,14 +260,14 @@ export const keysAll = {
         },
         //==========3d row ===============================================//
         key_capslock: {
-        "className": "key_fn_short",
-        "key": "CapsLock",
-        "keyCode": 20,
-        "which": 20,
-        "code": "CapsLock",
-        "location": 0,
-        "description": "caps lock",
-        "unicode": "⇪"
+            "className": "key_fn_short",
+            "key": "CapsLock",
+            "keyCode": 20,
+            "which": 20,
+            "code": "CapsLock",
+            "location": 0,
+            "description": "caps lock",
+            "unicode": "⇪"
         },
         key_a: {
             "key": "a",
@@ -377,7 +377,7 @@ export const keysAll = {
         },
         //==========4th row ===============================================//
         key_shift_left: {
-            "className": "key_fn_long",
+            "className": "key_fn_short",
             "key": "Shift",
             "keyCode": 16,
             "which": 16,
@@ -470,6 +470,18 @@ export const keysAll = {
             "location": 0,
             "description": "forward slash / ç"
         },
+        key_arrow_up: {
+            "key": "Up",
+            "keyCode": 38,
+            "which": 38,
+            "code": "ArrowUp",
+            "location": 0,
+            "altKey": false,
+            "ctrlKey": false,
+            "metaKey": false,
+            "shiftKey": false,
+            "repeat": false
+           },
         key_shift_right: {
             "className": "key_fn_short",
             "key": "Shift",
@@ -482,7 +494,7 @@ export const keysAll = {
         },
         //==========5th row ===============================================//
         key_ctrl_left: {
-            "className": "key_fn_short",
+            "className": "key_fn_shorter",
             "key": "Control",
             "keyCode": 17,
             "which": 17,
@@ -509,7 +521,7 @@ export const keysAll = {
             "unicode": "⌘ ⊞"
         },
         key_alt_left: {
-            "className": "key_fn_short",
+            "className": "key_fn_shorter",
             "key": "Alt",
             "keyCode": 18,
             "which": 18,
@@ -536,7 +548,7 @@ export const keysAll = {
             "repeat": false
         },
         key_alt_right: {
-            "className": "key_fn_short",
+            "className": "key_fn_shorter",
             "key": "Alt",
             "keyCode": 18,
             "which": 18,
@@ -549,8 +561,45 @@ export const keysAll = {
             "description": "Alt / Option",
             "unicode": "⎇ / ⌥"
         },
-        key_ctrl_right: {
-            "className": "key_fn_short",
+        key_arrow_left: {
+            "key": "Left",
+            "keyCode": 37,
+            "which": 37,
+            "code": "ArrowLeft",
+            "location": 0,
+            "altKey": false,
+            "ctrlKey": false,
+            "metaKey": false,
+            "shiftKey": false,
+            "repeat": false
+           },
+           key_arrow_down: {
+            "key": "Down",
+            "keyCode": 40,
+            "which": 40,
+            "code": "ArrowDown",
+            "location": 0,
+            "altKey": false,
+            "ctrlKey": false,
+            "metaKey": false,
+            "shiftKey": false,
+            "repeat": false
+           },
+
+        key_arrow_right: {
+            "key": "Right",
+            "keyCode": 39,
+            "which": 39,
+            "code": "ArrowRight",
+            "location": 0,
+            "altKey": false,
+            "ctrlKey": false,
+            "metaKey": false,
+            "shiftKey": false,
+            "repeat": false
+           },
+           key_ctrl_right: {
+            "className": "key_fn_shorter",
             "key": "Control",
             "keyCode": 17,
             "which": 17,
@@ -562,11 +611,24 @@ export const keysAll = {
             "shiftKey": true,
             "description": "ctrl",
             "unicode": "^"
-           },
-        
+        },
+
+
     },
-    //=================RU======================================================//
-    ru: {},
+//------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//=================RU======================================================//
+    ru: {
+        key_00: {
+            "className": "key_normal",
+            "key": "ё",
+            "keyCode": 192,
+            "which": 192,
+            "code": "Backquote",
+            "location": 0,
+            "description": "Backtick / grave accent / ñ / æ / ö"
+        },
+
+    },// RU finish
 }
 
 //module.exports = {keysAll}
