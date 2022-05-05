@@ -41,7 +41,6 @@ body {
 //----------------------------------------------------------------------------------------------------
 
 //======= Mixins ================================================//
-//================== - Mixins - ===================================//
 @mixin flexbox-center-all() {
     display: flex;
     align-items: flex-end;
@@ -53,6 +52,15 @@ body {
     text-decoration: none;
 }
 
+@mixin flexbox-row() {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+//================== - Mixins - ===================================//
+
 @mixin button() {
     display: flex;
     flex-direction: column;
@@ -61,11 +69,12 @@ body {
     background-color: $color-background;
     border-radius: $border-radius-key;
     border: $size-border-key solid $color-border;
+    padding-top: 9px;
 
     font-family: 'Georgia';
     font-style: normal;
     font-weight: 400;
-    font-size: 17px;
+    font-size: $size-font-on-keys;
     line-height: 22px;
     letter-spacing: 0.06em;
 
@@ -76,13 +85,6 @@ body {
         background-color: $color-hover;
         color: $color-background;
     }
-}
-
-@mixin flexbox-row() {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
 }
 
 //--------------------------------------------------------------------------------------------
