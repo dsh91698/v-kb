@@ -431,7 +431,7 @@ body {
   height: 200px;
   max-width: 1280px;
   border-radius: 15px;
-  border: solid 2px #f4a261;
+  border: solid 2px #ee9b00;
   margin: 20px auto;
 }
 
@@ -454,7 +454,7 @@ body {
   align-items: center;
   height: 500px;
   border-radius: 15px;
-  border: solid 2px #f4a261;
+  border: solid 2px #ee9b00;
 }
 
 .keyboard {
@@ -468,7 +468,7 @@ body {
   align-items: center;
   background-color: #264653;
   border-radius: 10px;
-  border: 1px solid #f4a261;
+  border: 1px solid #ee9b00;
   font-family: "Georgia";
   font-style: normal;
   font-weight: 400;
@@ -476,7 +476,7 @@ body {
   line-height: 22px;
   letter-spacing: 0.06em;
   /* color-dark-3xl */
-  color: #e9c46a;
+  color: #ee9b00;
   width: 70px;
   height: 70px;
 }
@@ -491,7 +491,7 @@ body {
   align-items: center;
   background-color: #264653;
   border-radius: 10px;
-  border: 1px solid #f4a261;
+  border: 1px solid #ee9b00;
   font-family: "Georgia";
   font-style: normal;
   font-weight: 400;
@@ -499,7 +499,7 @@ body {
   line-height: 22px;
   letter-spacing: 0.06em;
   /* color-dark-3xl */
-  color: #e9c46a;
+  color: #ee9b00;
   width: 210px;
   height: 70px;
 }
@@ -514,7 +514,7 @@ body {
   align-items: center;
   background-color: #264653;
   border-radius: 10px;
-  border: 1px solid #f4a261;
+  border: 1px solid #ee9b00;
   font-family: "Georgia";
   font-style: normal;
   font-weight: 400;
@@ -522,7 +522,7 @@ body {
   line-height: 22px;
   letter-spacing: 0.06em;
   /* color-dark-3xl */
-  color: #e9c46a;
+  color: #ee9b00;
   width: 140px;
   height: 70px;
 }
@@ -537,7 +537,7 @@ body {
   align-items: center;
   background-color: #264653;
   border-radius: 10px;
-  border: 1px solid #f4a261;
+  border: 1px solid #ee9b00;
   font-family: "Georgia";
   font-style: normal;
   font-weight: 400;
@@ -545,7 +545,7 @@ body {
   line-height: 22px;
   letter-spacing: 0.06em;
   /* color-dark-3xl */
-  color: #e9c46a;
+  color: #ee9b00;
   width: 105px;
   height: 70px;
 }
@@ -560,7 +560,7 @@ body {
   align-items: center;
   background-color: #264653;
   border-radius: 10px;
-  border: 1px solid #f4a261;
+  border: 1px solid #ee9b00;
   font-family: "Georgia";
   font-style: normal;
   font-weight: 400;
@@ -568,7 +568,7 @@ body {
   line-height: 22px;
   letter-spacing: 0.06em;
   /* color-dark-3xl */
-  color: #e9c46a;
+  color: #ee9b00;
   width: 420px;
   height: 70px;
 }
@@ -589,7 +589,7 @@ body {
   letter-spacing: 0.07em;
   color: #001219;
   border-radius: 15px;
-  background-color: #EE9B00;
+  background-color: #ee9b00;
   overflow: hidden;
 }
 
