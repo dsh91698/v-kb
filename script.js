@@ -53,6 +53,28 @@ function createSingleKey(className = 'key_normal', text = 'q') {
 
 // ================================================================================//
 //TODO: save and restore from localStorage needs to be added
+let isShiftPressed = false; // global flag for shift
+
+document.addEventListener('keydown', function (event) {
+    // catch keydown event on Shift keys and sets global var isShiftPressed
+    console.log('event.code keydown: ', event.code);
+    if (event.code == 'ShiftRight' || event.code == 'ShiftLeft') {
+      isShiftPressed = true;
+    }
+    // if (event.code == 'KeyZ' && (event.ctrlKey || event.metaKey)) {
+    //     alert('Undo!')
+    //   }
+});
+  
+document.addEventListener('keyup', function (event) {
+    console.log('event.code keyup: ', event.code);
+    if (event.code == 'ShiftRight' || event.code == 'ShiftLeft') {
+      isShiftPressed = false;
+    }
+});
+
+
+//TODO: save and restore from localStorage needs to be added
 let isCapsLock = false; // caps-lock flag
 const capsLockKey = document.querySelector('[data-key="CapsLock"]');
 capsLockKey.addEventListener('click', () => { 
@@ -68,8 +90,8 @@ const textAreaZone = document.querySelector('.textarea'); // place for text
 const keyboard = document.querySelector('.keyboard');
 
 keyboard.addEventListener('click', (event) => {
-    console.log(event.target.dataset.code);
-    console.log(event.target.dataset.key);
+    console.log('mouse click', event.target.dataset.code);
+    console.log('mouse click', event.target.dataset.key);
 
     if (event.target.dataset.code === 'Backspace') { // if back-space
         textAreaZone.textContent = textAreaZone.textContent.slice(0, -1); // delete last letter
@@ -80,14 +102,22 @@ keyboard.addEventListener('click', (event) => {
     } else if (event.target.dataset.code === 'Tab') { // if Tab
         textAreaZone.textContent += '\t'; // add tab ! works only when - white-space: pre-wrap; added in css
     } else {
+
         if (event.target.dataset.key) { // if NOT undefined 
             // than add letter or whatever in low or upper case
-            isCapsLock ? textAreaZone.textContent += event.target.dataset.key.toUpperCase() : textAreaZone.textContent += event.target.dataset.key; 
-            //textAreaZone.textContent += event.target.dataset.key;
+            upperOrLowerKey(isCapsLock, isShiftPressed) ?
+                textAreaZone.textContent += event.target.dataset.key.toUpperCase()
+                : textAreaZone.textContent += event.target.dataset.key;
         }
     }
 });
 
+function upperOrLowerKey(isCapsLock, isShiftPressed){ // checks if key should be upper or lowercase based on global vars
+    if (isCapsLock && isShiftPressed) { return false }
+    if (isCapsLock && !isShiftPressed) { return true }
+    if (!isCapsLock && isShiftPressed) { return true }
+    if (!isCapsLock && !isShiftPressed) { return false }
+}
 
 
 
