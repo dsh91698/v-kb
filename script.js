@@ -3,13 +3,20 @@ console.log('Virtual keyboard task');
 import {keysAll} from './_kb_layout.js';
 //console.log(keysAll);
 //===============================================================================//
-function createNewElement(tag, className, text) {
+function createNewElement(tag, className, text, shiftText = '') {
     const element = document.createElement(tag);
     element.classList.add(className);
     //element.textContent = text;
-    element.innerHTML = text;
+    shiftText ? element.innerHTML = shiftText+'<br />' : void 0; // if onshift attribute exists - add it to the element on new line
+    element.innerHTML += `${text}`;
     return element;
 }
+
+function createSingleKey(className = 'key_normal', text = 'q', shiftText = '') {
+    const key = createNewElement('div', className, text, shiftText);
+    return key;
+}
+
 
 let header = createNewElement('header', 'header', '');
 //let headerText = createNewElement('h1', 'header-text', 'Virtual keyboard task'); // header on top
@@ -26,7 +33,7 @@ function createKeyboard(langv = 'en') { // keyboard create
     
     //Object.keys(keysAll.en).forEach(key => {
     Object.keys(keysAll[lang]).forEach(key => {
-        let button = createSingleKey(keysAll[lang][key].className, keysAll[lang][key].key);
+        let button = createSingleKey(keysAll[lang][key].className, keysAll[lang][key].key, keysAll[lang][key].onShift);
         button.dataset.code = keysAll[lang][key].code; // set dataset attribute - code
         button.dataset.key = keysAll[lang][key].key; // set dataset attribute - key
         button.dataset.shift = keysAll[lang][key].onShift; // set dataset attribute - shift - when Shift-key pressed        
@@ -46,10 +53,6 @@ function createKeyboard(langv = 'en') { // keyboard create
 createKeyboard('en');
 //createKeyboard('ru');
 
-function createSingleKey(className = 'key_normal', text = 'q') {
-    const key = createNewElement('div', className, text);
-    return key;
-}
 
 // ================================================================================//
 //TODO: save and restore from localStorage needs to be added
@@ -106,11 +109,13 @@ keyboard.addEventListener('click', (event) => {
         if (event.target.dataset.key) { // if NOT undefined 
             // than add letter or whatever in low or upper case
             if (upperOrLowerKey(isCapsLock, isShiftPressed)) {
-                isShiftPressed ? textAreaZone.textContent += event.target.dataset.shift : textAreaZone.textContent += event.target.dataset.key.toUpperCase(); // onShift
-                //textAreaZone.textContent += event.target.dataset.key.toUpperCase();
+                isShiftPressed ? // onShift
+                    textAreaZone.textContent += event.target.dataset.shift : // value from dataset.shift
+                    textAreaZone.textContent += event.target.dataset.key.toUpperCase(); 
             } else {
-                isShiftPressed ? textAreaZone.textContent += event.target.dataset.shift : textAreaZone.textContent += event.target.dataset.key; // onShift keys
-                //textAreaZone.textContent += event.target.dataset.key;
+                isShiftPressed ? // onShift keys
+                    textAreaZone.textContent += event.target.dataset.shift : // value from dataset.shift
+                    textAreaZone.textContent += event.target.dataset.key; 
             }
             
         }
