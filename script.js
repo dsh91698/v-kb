@@ -105,9 +105,14 @@ keyboard.addEventListener('click', (event) => {
 
         if (event.target.dataset.key) { // if NOT undefined 
             // than add letter or whatever in low or upper case
-            upperOrLowerKey(isCapsLock, isShiftPressed) ?
-                textAreaZone.textContent += event.target.dataset.key.toUpperCase()
-                : textAreaZone.textContent += event.target.dataset.key;
+            if (upperOrLowerKey(isCapsLock, isShiftPressed)) {
+                isShiftPressed ? textAreaZone.textContent += event.target.dataset.shift : textAreaZone.textContent += event.target.dataset.key.toUpperCase(); // onShift
+                //textAreaZone.textContent += event.target.dataset.key.toUpperCase();
+            } else {
+                isShiftPressed ? textAreaZone.textContent += event.target.dataset.shift : textAreaZone.textContent += event.target.dataset.key; // onShift keys
+                //textAreaZone.textContent += event.target.dataset.key;
+            }
+            
         }
     }
 });
