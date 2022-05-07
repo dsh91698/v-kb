@@ -29,7 +29,7 @@ function createKeyboard(langv = 'en') { // keyboard create
         let button = createSingleKey(keysAll[lang][key].className, keysAll[lang][key].key);
         button.dataset.code = keysAll[lang][key].code; // set dataset attribute - code
         button.dataset.key = keysAll[lang][key].key; // set dataset attribute - key
-        //todo: add symbols for shift to dataset
+        button.dataset.shift = keysAll[lang][key].onShift; // set dataset attribute - shift - when Shift-key pressed        
         keyboardContainer.append(button);
     });
 
