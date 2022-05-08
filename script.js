@@ -57,15 +57,13 @@ createKeyboard('en');
 // ================================================================================//
 //TODO: save and restore from localStorage needs to be added
 let isShiftPressed = false; // global flag for shift
-let shift;
+//let shift;
 
 document.addEventListener('keydown', function (event) {
     // catch keydown event on Shift keys and sets global var isShiftPressed
     console.log('event.code keydown: ', event);
     if (event.code == 'ShiftRight' || event.code == 'ShiftLeft') {
         isShiftPressed = true;
-        //shift = document.querySelector(`[data-code="${event.code}"]`);
-        //shift.classList.add('key_pressed');
     }
     keystrokeCatcher(event);
 });
@@ -74,7 +72,6 @@ document.addEventListener('keyup', function (event) {
     console.log('event.code keyup: ', event.code);
     if (event.code == 'ShiftRight' || event.code == 'ShiftLeft') {
         isShiftPressed = false;
-        //shift.classList.remove('key_pressed');
     }
     keystrokeCatcher(event);
 });
@@ -82,15 +79,16 @@ document.addEventListener('keyup', function (event) {
 //--------------------keystrocke catcher - start ----------------------------------------------------------------------------------------//
 let key;
 function keystrokeCatcher(event) { 
-    console.log('keystrokeCatcher - keystroke - code:', event.code, event.type);
+    //console.log('keystrokeCatcher - keystroke - code:', event.code, event.type);
     key = document.querySelector(`[data-code="${event.code}"]`);
+    event.preventDefault();
+    event.stopPropagation();
     if (event.type == 'keydown') {
         key.classList.add('key_pressed');
+        keyboardClickCatcher(key);
     } else if (event.type == 'keyup') { 
         key.classList.remove('key_pressed');
     }
-    
-    console.log('keystrokeCatcher - keystroke - key:', key);
 }
 //--------------------keystrocke catcher - finish ----------------------------------------------------------------------------------------//
 
@@ -114,11 +112,6 @@ const keyboard = document.querySelector('.keyboard');
 keyboard.addEventListener('click', (event) => {
     mouseClickCatcher(event);
 });
-
-// document.addEventListener('keydown', (event) => {
-//     keystrokeCatcher(event);
-// });
-
 
 
 //--------- mouse click catcher -----------------//
@@ -168,3 +161,37 @@ function isUpperCase(isCapsLock, isShiftPressed) {
 
 //-------------------------------------------------------------------------------------------------------------//
 
+function keyboardClickCatcher(key) {
+    console.log('kbClickCatcher - key click - code:', key.dataset.code);
+    console.log('kbClickCatcher - key click - key:', key.dataset.key);
+    console.log('kbClickCatcher - key click - shift:', key.dataset.shift);
+
+    if (key.dataset.code === 'Backspace') { // if back-space
+        textAreaZone.textContent = textAreaZone.textContent.slice(0, -1); // delete last letter
+    } else if (key.dataset.code === 'Enter') { // if enter
+        textAreaZone.innerHTML += '\n'; // add new line
+    } else if (key.dataset.code === 'Space') { // if space
+        textAreaZone.textContent += ' '; // add space
+    } else if (key.dataset.code === 'Tab') { // if Tab
+        textAreaZone.textContent += '\t'; // add tab ! works only when - white-space: pre-wrap; added in css
+    } else {
+
+        if (key.dataset.key) { // if NOT undefined 
+            // than add letter or whatever in low or upper case
+            if (isUpperCase(isCapsLock, isShiftPressed)) {
+                isShiftPressed ? // onShift
+                    key.dataset.shift != 'undefined' ? // if onShift exists
+                        textAreaZone.textContent += key.dataset.shift // value from dataset.shift
+                        : textAreaZone.textContent += key.dataset.key.toUpperCase()
+                    : textAreaZone.textContent += key.dataset.key.toUpperCase(); // value from dataset.key
+            } else {
+                isShiftPressed ? // onShift keys
+                    key.dataset.shift != 'undefined' ? // if onShift exists
+                        textAreaZone.textContent += key.dataset.shift  // value from dataset.shift
+                        : textAreaZone.textContent += key.dataset.key  // value from dataset.key
+                    : textAreaZone.textContent += key.dataset.key.toLowerCase(); // value from dataset.key
+            }
+
+        }
+    }
+}
