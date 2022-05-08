@@ -98,9 +98,17 @@ const textAreaZone = document.querySelector('.textarea'); // place for text
 const keyboard = document.querySelector('.keyboard');
 
 keyboard.addEventListener('click', (event) => {
-    console.log('mouse click - code:', event.target.dataset.code);
-    console.log('mouse click - key:', event.target.dataset.key);
-    console.log('mouse click - shift:', event.target.dataset.shift);
+    keystrokeCatcher(event);
+});
+
+
+
+//--------- keystroke catcher -----------------//
+
+function keystrokeCatcher(event) {
+    console.log('keystrokeCatcher - mouse click - code:', event.target.dataset.code);
+    console.log('keystrokeCatcher - mouse click - key:', event.target.dataset.key);
+    console.log('keystrokeCatcher - mouse click - shift:', event.target.dataset.shift);
 
     if (event.target.dataset.code === 'Backspace') { // if back-space
         textAreaZone.textContent = textAreaZone.textContent.slice(0, -1); // delete last letter
@@ -130,16 +138,15 @@ keyboard.addEventListener('click', (event) => {
 
         }
     }
-});
+}
 
-function isUpperCase(isCapsLock, isShiftPressed) { // checks if key should be upper or lowercase based on global vars
+
+function isUpperCase(isCapsLock, isShiftPressed) {
+    // checks if key should be upper or lowercase based on global vars
     if (isCapsLock && isShiftPressed) { return false }
     if (isCapsLock && !isShiftPressed) { return true }
     if (!isCapsLock && isShiftPressed) { return true }
     if (!isCapsLock && !isShiftPressed) { return false }
 }
 
-//--------- keystroke catcher -----------------//
-
-
-
+//-------------------------------------------------------------------------------------------------------------//
