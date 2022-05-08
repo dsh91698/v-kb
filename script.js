@@ -57,12 +57,16 @@ createKeyboard('en');
 // ================================================================================//
 //TODO: save and restore from localStorage needs to be added
 let isShiftPressed = false; // global flag for shift
-
+let shift;
 document.addEventListener('keydown', function (event) {
     // catch keydown event on Shift keys and sets global var isShiftPressed
     console.log('event.code keydown: ', event.code);
     if (event.code == 'ShiftRight' || event.code == 'ShiftLeft') {
-      isShiftPressed = true;
+        isShiftPressed = true;
+        shift = document.querySelector(`[data-code="${event.code}"]`);
+        //console.log('selector', document.querySelector('[data-code=`${event.code}`]'))
+        //console.log('selector', document.querySelector('[data-code=ShiftLeft]'))
+        shift.classList.add('key_pressed');
     }
     // if (event.code == 'KeyZ' && (event.ctrlKey || event.metaKey)) {
     //     alert('Undo!')
@@ -72,7 +76,8 @@ document.addEventListener('keydown', function (event) {
 document.addEventListener('keyup', function (event) {
     console.log('event.code keyup: ', event.code);
     if (event.code == 'ShiftRight' || event.code == 'ShiftLeft') {
-      isShiftPressed = false;
+        isShiftPressed = false;
+        shift.classList.remove('key_pressed');
     }
 });
 
@@ -128,6 +133,8 @@ function upperOrLowerKey(isCapsLock, isShiftPressed){ // checks if key should be
     if (!isCapsLock && isShiftPressed) { return true }
     if (!isCapsLock && !isShiftPressed) { return false }
 }
+
+//--------- keystroke catcher -----------------//
 
 
 

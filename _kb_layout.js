@@ -510,7 +510,7 @@ export const keysAll = {
             "key": "Shift",
             "keyCode": 16,
             "which": 16,
-            "code": "ShiftLeft",
+            "code": "ShiftRight",
              
             "description": "shift",
             "unicode": "⇧"
