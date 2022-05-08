@@ -84,6 +84,7 @@ body {
     &:hover {
         background-color: $color-hover;
         color: $color-background;
+        border-radius: $border-radius-key-pressed;
     }
 }
 
@@ -191,6 +192,8 @@ body {
 .CL_on{
 background-color: $color-CL_on;
 }
+
 .key_pressed{
     background-color: $color-CL_on;
+    border-radius: $border-radius-key-pressed;
 }

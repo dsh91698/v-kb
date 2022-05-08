@@ -484,6 +484,7 @@ body {
 .key_normal:hover {
   background-color: #e76f51;
   color: #264653;
+  border-radius: 35px;
 }
 
 .key_fn_long {
@@ -508,6 +509,7 @@ body {
 .key_fn_long:hover {
   background-color: #e76f51;
   color: #264653;
+  border-radius: 35px;
 }
 
 .key_fn_short {
@@ -532,6 +534,7 @@ body {
 .key_fn_short:hover {
   background-color: #e76f51;
   color: #264653;
+  border-radius: 35px;
 }
 
 .key_fn_shorter {
@@ -556,6 +559,7 @@ body {
 .key_fn_shorter:hover {
   background-color: #e76f51;
   color: #264653;
+  border-radius: 35px;
 }
 
 .key_space {
@@ -580,6 +584,7 @@ body {
 .key_space:hover {
   background-color: #e76f51;
   color: #264653;
+  border-radius: 35px;
 }
 
 .textarea {
@@ -604,4 +609,5 @@ body {
 
 .key_pressed {
   background-color: green;
+  border-radius: 35px;
 }/*# sourceMappingURL=style.css.map */
