@@ -485,6 +485,7 @@ body {
   background-color: #e76f51;
   color: #264653;
   border-radius: 35px;
+  box-shadow: 0 0 15px 5px #9b2226;
 }
 
 .key_fn_long {
@@ -510,6 +511,7 @@ body {
   background-color: #e76f51;
   color: #264653;
   border-radius: 35px;
+  box-shadow: 0 0 15px 5px #9b2226;
 }
 
 .key_fn_short {
@@ -535,6 +537,7 @@ body {
   background-color: #e76f51;
   color: #264653;
   border-radius: 35px;
+  box-shadow: 0 0 15px 5px #9b2226;
 }
 
 .key_fn_shorter {
@@ -560,6 +563,7 @@ body {
   background-color: #e76f51;
   color: #264653;
   border-radius: 35px;
+  box-shadow: 0 0 15px 5px #9b2226;
 }
 
 .key_space {
@@ -585,6 +589,7 @@ body {
   background-color: #e76f51;
   color: #264653;
   border-radius: 35px;
+  box-shadow: 0 0 15px 5px #9b2226;
 }
 
 .textarea {
