@@ -522,11 +522,6 @@ export const keysAll = {
             "keyCode": 17,
             "which": 17,
             "code": "ControlLeft",
-             
-            "altKey": true,
-            "ctrlKey": false,
-            "metaKey": true,
-            "shiftKey": true,
             "description": "ctrl",
             "unicode": "^"
         },
@@ -535,11 +530,6 @@ export const keysAll = {
             "keyCode": 91,
             "which": 91,
             "code": "MetaLeft",
-             
-            "altKey": false,
-            "ctrlKey": false,
-            "metaKey": true,
-            "shiftKey": false,
             "description": "Windows Key / Left ⌘ / Chromebook Search key",
             "unicode": "⌘ ⊞"
         },
@@ -549,11 +539,6 @@ export const keysAll = {
             "keyCode": 18,
             "which": 18,
             "code": "AltLeft",
-             
-            "altKey": true,
-            "ctrlKey": false,
-            "metaKey": true,
-            "shiftKey": false,
             "description": "Alt / Option",
             "unicode": "⎇ / ⌥"
         },
@@ -563,24 +548,13 @@ export const keysAll = {
             "keyCode": 32,
             "which": 32,
             "code": "Space",
-             
-            "altKey": false,
-            "ctrlKey": false,
-            "metaKey": false,
-            "shiftKey": false,
-            "repeat": false
-        },
+            "description": "space",},
         key_alt_right: {
             "className": "key_fn_shorter",
             "key": "Alt",
             "keyCode": 18,
             "which": 18,
-            "code": "AltLeft",
-             
-            "altKey": true,
-            "ctrlKey": false,
-            "metaKey": true,
-            "shiftKey": false,
+            "code": "AltRight",
             "description": "Alt / Option",
             "unicode": "⎇ / ⌥"
         },
@@ -589,24 +563,12 @@ export const keysAll = {
             "keyCode": 37,
             "which": 37,
             "code": "ArrowLeft",
-             
-            "altKey": false,
-            "ctrlKey": false,
-            "metaKey": false,
-            "shiftKey": false,
-            "repeat": false
            },
            key_arrow_down: {
             "key": "▼",
             "keyCode": 40,
             "which": 40,
             "code": "ArrowDown",
-             
-            "altKey": false,
-            "ctrlKey": false,
-            "metaKey": false,
-            "shiftKey": false,
-            "repeat": false
            },
 
         key_arrow_right: {
@@ -614,28 +576,16 @@ export const keysAll = {
             "keyCode": 39,
             "which": 39,
             "code": "ArrowRight",
-             
-            "altKey": false,
-            "ctrlKey": false,
-            "metaKey": false,
-            "shiftKey": false,
-            "repeat": false
            },
            key_ctrl_right: {
             "className": "key_fn_shorter",
             "key": "Control",
             "keyCode": 17,
             "which": 17,
-            "code": "ControlLeft",
-             
-            "altKey": true,
-            "ctrlKey": false,
-            "metaKey": true,
-            "shiftKey": true,
+            "code": "ControlRight",
             "description": "ctrl",
             "unicode": "^"
         },
-
 
     },
 //------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1141,11 +1091,6 @@ export const keysAll = {
             "keyCode": 91,
             "which": 91,
             "code": "MetaLeft",
-             
-            "altKey": false,
-            "ctrlKey": false,
-            "metaKey": true,
-            "shiftKey": false,
             "description": "Windows Key / Left ⌘ / Chromebook Search key",
             "unicode": "⌘ ⊞"
         },
@@ -1155,11 +1100,6 @@ export const keysAll = {
             "keyCode": 18,
             "which": 18,
             "code": "AltLeft",
-             
-            "altKey": true,
-            "ctrlKey": false,
-            "metaKey": true,
-            "shiftKey": false,
             "description": "Alt / Option",
             "unicode": "⎇ / ⌥"
         },
@@ -1169,24 +1109,13 @@ export const keysAll = {
             "keyCode": 32,
             "which": 32,
             "code": "Space",
-             
-            "altKey": false,
-            "ctrlKey": false,
-            "metaKey": false,
-            "shiftKey": false,
-            "repeat": false
         },
         key_alt_right: {
             "className": "key_fn_shorter",
             "key": "Alt",
             "keyCode": 18,
             "which": 18,
-            "code": "AltLeft",
-             
-            "altKey": true,
-            "ctrlKey": false,
-            "metaKey": true,
-            "shiftKey": false,
+            "code": "AltRight",
             "description": "Alt / Option",
             "unicode": "⎇ / ⌥"
         },
@@ -1195,24 +1124,12 @@ export const keysAll = {
             "keyCode": 37,
             "which": 37,
             "code": "ArrowLeft",
-             
-            "altKey": false,
-            "ctrlKey": false,
-            "metaKey": false,
-            "shiftKey": false,
-            "repeat": false
            },
            key_arrow_down: {
             "key": "▼",
             "keyCode": 40,
             "which": 40,
             "code": "ArrowDown",
-             
-            "altKey": false,
-            "ctrlKey": false,
-            "metaKey": false,
-            "shiftKey": false,
-            "repeat": false
            },
 
         key_arrow_right: {
@@ -1220,24 +1137,13 @@ export const keysAll = {
             "keyCode": 39,
             "which": 39,
             "code": "ArrowRight",
-             
-            "altKey": false,
-            "ctrlKey": false,
-            "metaKey": false,
-            "shiftKey": false,
-            "repeat": false
            },
            key_ctrl_right: {
             "className": "key_fn_shorter",
             "key": "Control",
             "keyCode": 17,
             "which": 17,
-            "code": "ControlLeft",
-             
-            "altKey": true,
-            "ctrlKey": false,
-            "metaKey": true,
-            "shiftKey": true,
+            "code": "ControlRight",
             "description": "ctrl",
             "unicode": "^"
         },

@@ -49,13 +49,14 @@ function createKeyboard(langv = 'en') { // keyboard create
     // keyboardContainer.append(a);
     document.body.append(keyboard);
 }
-
-//createKeyboard('en');
-createKeyboard('ru');
+let kbLang = localStorage.kbLang;
+createKeyboard(kbLang);
+//createKeyboard('ru');
 
 
 // ================================================================================//
 //TODO: save and restore from localStorage needs to be added
+
 let isShiftPressed = false; // global flag for shift
 //let shift;
 
@@ -64,7 +65,12 @@ document.addEventListener('keydown', function (event) {
     console.log('event.code keydown: ', event);
     if (event.code == 'ShiftRight' || event.code == 'ShiftLeft') {
         isShiftPressed = true;
-    }
+    }  
+    // if (event.key == 'Shift' && event.key == 'Alt') {
+    //     alert('Shift + Alt');
+    // }
+    
+
     keystrokeCatcher(event);
 });
 
@@ -81,8 +87,8 @@ let key;
 function keystrokeCatcher(event) { 
     //console.log('keystrokeCatcher - keystroke - code:', event.code, event.type);
     key = document.querySelector(`[data-code="${event.code}"]`);
-    event.preventDefault();
-    event.stopPropagation();
+    event.preventDefault(); // tab-key - prevent tabulation
+    event.stopPropagation(); // tab-key - prevent tabulation
     if (event.type == 'keydown') {
         key.classList.add('key_pressed');
         keyboardClickCatcher(key);
@@ -105,6 +111,18 @@ capsLockKey.addEventListener('click', () => {
         capsLockKey.classList.remove('CL_on');
     }
 });
+
+document.addEventListener('keydown', (event) => {
+    if (event.code == 'CapsLock') {
+        isCapsLock = !isCapsLock;
+        if (isCapsLock) {
+            capsLockKey.classList.add('CL_on');
+        } else {
+            capsLockKey.classList.remove('CL_on');
+        }
+    }
+});
+
 
 const textAreaZone = document.querySelector('.textarea'); // place for text
 const keyboard = document.querySelector('.keyboard');
@@ -129,8 +147,15 @@ function mouseClickCatcher(event) {
         textAreaZone.textContent += ' '; // add space
     } else if (event.target.dataset.code === 'Tab') { // if Tab
         textAreaZone.textContent += '\t'; // add tab ! works only when - white-space: pre-wrap; added in css
-    } else {
-
+    } else if (
+        event.target.dataset.key === 'Shift' ||
+        event.target.dataset.key === 'Alt' ||
+        event.target.dataset.key === 'Control' ||
+        event.target.dataset.key === 'Meta' ||
+        event.target.dataset.key === 'CapsLock'
+    ) { void 0 }
+    
+    else {
         if (event.target.dataset.key) { // if NOT undefined 
             // than add letter or whatever in low or upper case
             if (isUpperCase(isCapsLock, isShiftPressed)) {
@@ -174,8 +199,15 @@ function keyboardClickCatcher(key) {
         textAreaZone.textContent += ' '; // add space
     } else if (key.dataset.code === 'Tab') { // if Tab
         textAreaZone.textContent += '\t'; // add tab ! works only when - white-space: pre-wrap; added in css
-    } else {
-
+    } else if (
+        key.dataset.key === 'Shift' ||
+        key.dataset.key === 'Alt' ||
+        key.dataset.key === 'Control' ||
+        key.dataset.key === 'Meta' ||
+        key.dataset.key === 'CapsLock'
+    ) { void 0 }
+    
+    else {
         if (key.dataset.key) { // if NOT undefined 
             // than add letter or whatever in low or upper case
             if (isUpperCase(isCapsLock, isShiftPressed)) {
