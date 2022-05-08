@@ -58,28 +58,42 @@ createKeyboard('en');
 //TODO: save and restore from localStorage needs to be added
 let isShiftPressed = false; // global flag for shift
 let shift;
+
 document.addEventListener('keydown', function (event) {
     // catch keydown event on Shift keys and sets global var isShiftPressed
-    console.log('event.code keydown: ', event.code);
+    console.log('event.code keydown: ', event);
     if (event.code == 'ShiftRight' || event.code == 'ShiftLeft') {
         isShiftPressed = true;
-        shift = document.querySelector(`[data-code="${event.code}"]`);
-        //console.log('selector', document.querySelector('[data-code=`${event.code}`]'))
-        //console.log('selector', document.querySelector('[data-code=ShiftLeft]'))
-        shift.classList.add('key_pressed');
+        //shift = document.querySelector(`[data-code="${event.code}"]`);
+        //shift.classList.add('key_pressed');
     }
-    // if (event.code == 'KeyZ' && (event.ctrlKey || event.metaKey)) {
-    //     alert('Undo!')
-    //   }
+    keystrokeCatcher(event);
 });
 
 document.addEventListener('keyup', function (event) {
     console.log('event.code keyup: ', event.code);
     if (event.code == 'ShiftRight' || event.code == 'ShiftLeft') {
         isShiftPressed = false;
-        shift.classList.remove('key_pressed');
+        //shift.classList.remove('key_pressed');
     }
+    keystrokeCatcher(event);
 });
+
+//--------------------keystrocke catcher - start ----------------------------------------------------------------------------------------//
+let key;
+function keystrokeCatcher(event) { 
+    console.log('keystrokeCatcher - keystroke - code:', event.code, event.type);
+    key = document.querySelector(`[data-code="${event.code}"]`);
+    if (event.type == 'keydown') {
+        key.classList.add('key_pressed');
+    } else if (event.type == 'keyup') { 
+        key.classList.remove('key_pressed');
+    }
+    
+    console.log('keystrokeCatcher - keystroke - key:', key);
+}
+//--------------------keystrocke catcher - finish ----------------------------------------------------------------------------------------//
+
 
 
 //TODO: save and restore from localStorage needs to be added
@@ -98,17 +112,21 @@ const textAreaZone = document.querySelector('.textarea'); // place for text
 const keyboard = document.querySelector('.keyboard');
 
 keyboard.addEventListener('click', (event) => {
-    keystrokeCatcher(event);
+    mouseClickCatcher(event);
 });
 
+// document.addEventListener('keydown', (event) => {
+//     keystrokeCatcher(event);
+// });
 
 
-//--------- keystroke catcher -----------------//
 
-function keystrokeCatcher(event) {
-    console.log('keystrokeCatcher - mouse click - code:', event.target.dataset.code);
-    console.log('keystrokeCatcher - mouse click - key:', event.target.dataset.key);
-    console.log('keystrokeCatcher - mouse click - shift:', event.target.dataset.shift);
+//--------- mouse click catcher -----------------//
+
+function mouseClickCatcher(event) {
+    console.log('mouseClickCatcher - mouse click - code:', event.target.dataset.code);
+    console.log('mouseClickCatcher - mouse click - key:', event.target.dataset.key);
+    console.log('mouseClickCatcher - mouse click - shift:', event.target.dataset.shift);
 
     if (event.target.dataset.code === 'Backspace') { // if back-space
         textAreaZone.textContent = textAreaZone.textContent.slice(0, -1); // delete last letter
@@ -140,7 +158,6 @@ function keystrokeCatcher(event) {
     }
 }
 
-
 function isUpperCase(isCapsLock, isShiftPressed) {
     // checks if key should be upper or lowercase based on global vars
     if (isCapsLock && isShiftPressed) { return false }
@@ -150,3 +167,4 @@ function isUpperCase(isCapsLock, isShiftPressed) {
 }
 
 //-------------------------------------------------------------------------------------------------------------//
+

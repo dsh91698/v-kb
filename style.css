@@ -401,7 +401,7 @@ th {
 *:before,
 *:after {
   box-sizing: border-box;
-  transition: 0.5s;
+  transition: 0.15s;
   scroll-behavior: smooth;
 }
 
