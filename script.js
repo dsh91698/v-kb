@@ -49,13 +49,23 @@ function createKeyboard(langv = 'en') { // keyboard create
     // keyboardContainer.append(a);
     document.body.append(keyboard);
 }
-let kbLang = localStorage.kbLang;
-createKeyboard(kbLang);
-//createKeyboard('ru');
 
+
+//createKeyboard('ru');
+//TODO: save and restore from localStorage needs to be added
+let kbLang;
+function getLanguageForKeyboard() {
+    //get langv from localStorage
+    localStorage.kbLang ? kbLang = localStorage.kbLang : kbLang = 'en';
+}
+function setLanguageToLocalStorage(kbLang) {
+    localStorage.kbLang = kbLang;
+}
+
+getLanguageForKeyboard(); // getting language from localStorage before creating keyboard
+createKeyboard(kbLang);
 
 // ================================================================================//
-//TODO: save and restore from localStorage needs to be added
 
 let isShiftPressed = false; // global flag for shift
 //let shift;
@@ -66,11 +76,6 @@ document.addEventListener('keydown', function (event) {
     if (event.code == 'ShiftRight' || event.code == 'ShiftLeft') {
         isShiftPressed = true;
     }  
-    // if (event.key == 'Shift' && event.key == 'Alt') {
-    //     alert('Shift + Alt');
-    // }
-    
-
     keystrokeCatcher(event);
 });
 
@@ -98,13 +103,24 @@ function keystrokeCatcher(event) {
 }
 //--------------------keystrocke catcher - finish ----------------------------------------------------------------------------------------//
 
+function setIsCapsLockToLocalStorage() {
+    localStorage.isCapsLock = isCapsLock;
+    console.log('setIsCapsLockToLocalStorage: ', localStorage.isCapsLock);
+}
 
+window.onload = function () {    // onload event
+    isCapsLock = (localStorage.isCapsLock === 'true'); // caps-lock flag
+    if (isCapsLock) {
+        capsLockKey.classList.add('CL_on');
+    }
+}
 
 //TODO: save and restore from localStorage needs to be added
-let isCapsLock = false; // caps-lock flag
+let isCapsLock;
 const capsLockKey = document.querySelector('[data-key="CapsLock"]');
 capsLockKey.addEventListener('click', () => {
     isCapsLock = !isCapsLock;
+    setIsCapsLockToLocalStorage();
     if (isCapsLock) {
         capsLockKey.classList.add('CL_on');
     } else {
@@ -115,6 +131,7 @@ capsLockKey.addEventListener('click', () => {
 document.addEventListener('keydown', (event) => {
     if (event.code == 'CapsLock') {
         isCapsLock = !isCapsLock;
+        setIsCapsLockToLocalStorage();
         if (isCapsLock) {
             capsLockKey.classList.add('CL_on');
         } else {
