@@ -1,6 +1,6 @@
 console.log('Virtual keyboard task');
 //===============================================================================//
-import { keysAll } from './_kb_layout.js';
+import { keysAll } from './assets/js/_kb_layout.js';
 //console.log(keysAll);
 //===============================================================================//
 function createNewElement(tag, className, text, shiftText = '') {
@@ -50,8 +50,8 @@ function createKeyboard(langv = 'en') { // keyboard create
     document.body.append(keyboard);
 }
 
-createKeyboard('en');
-//createKeyboard('ru');
+//createKeyboard('en');
+createKeyboard('ru');
 
 
 // ================================================================================//
