@@ -1,6 +1,6 @@
 console.log('Virtual keyboard task');
 //===============================================================================//
-import { keysAll } from './assets/js/_kb_layout.js';
+import { keysAll } from './assets/js/kb_layout.js';
 //===============================================================================//
 let isRussian = (localStorage.isRussian === 'true');
 
