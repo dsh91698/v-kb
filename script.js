@@ -42,7 +42,7 @@ let header = createNewElement('header', 'header', '');
 let textArea = createNewElement('div', 'textarea', ''); // place for text
 header.append(textArea);
 document.body.prepend(header);
-
+//let keyboard;
 function createKeyboard(isRussian) { // keyboard create
     //let lang = (isRussian ? 'ru' : 'en');
     let lang;
@@ -60,31 +60,23 @@ function createKeyboard(isRussian) { // keyboard create
         button.dataset.shift = keysAll[lang][key].onShift; // set dataset attribute - shift - when Shift-key pressed        
         keyboardContainer.append(button);
     });
-
-    // Object.keys(keysAll.en).forEach(key => {
-    //     console.log(key);
-    //     console.log(keysAll.en[key].className, keysAll.en[key].key);
-    // });
-
-    // let a = createSingleKey();
-    // keyboardContainer.append(a);
     document.body.append(keyboard);
 
-    let headerText = createNewElement('h1', 'header-text', 'Virtual keyboard task'); // header on top
-    document.body.append(headerText);
+    let message = createNewElement('div', 'message', '');
+    let messageText = createNewElement('h2', 'header-text', 'Lang.switching: Alt + Control'); // message
+    let messageTextSub = createNewElement('h2', 'header-text', 'Virtual keyboard made in Windows & Mac'); // message
+    message.append(messageText);
+    message.append(messageTextSub);
+    document.body.append(message);
 
 }
 
+// function getLanguageForKeyboard() {
+//     //get langv from localStorage
+//     localStorage.isRussian ? isRussian = (localStorage.isRussian === 'true') : isRussian = false;
+//     //createKeyboard(isRussian);
+// }
 
-
-//createKeyboard('ru');
-//TODO: save and restore from localStorage needs to be added
-
-function getLanguageForKeyboard() {
-    //get langv from localStorage
-    localStorage.isRussian ? isRussian = (localStorage.isRussian === 'true') : isRussian = false;
-    //createKeyboard(isRussian);
-}
 function setLanguageToLocalStorage() {
     localStorage.isRussian = isRussian;
 }
@@ -99,7 +91,10 @@ document.addEventListener('keydown', (event) => {
         //event.stopPropagation();
         isRussian = !isRussian;
         setLanguageToLocalStorage();
+        //let keyboard = document.querySelector('.keyboard');
         //createKeyboard(isRussian);
+        //document.body.remove(keyboard);
+        document.location.reload();
     }
 });
 

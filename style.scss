@@ -109,6 +109,22 @@ body {
     margin: 20px auto;
 }
 
+.message {
+    display: flex;
+    flex-direction: column;
+    //background-color: red;
+    padding: 0 20px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    max-width: 1280px;
+    border-radius: $border-radius;
+    border: solid $size-border-main $color-border;
+    margin: 20px auto;
+}
+
+
 .header-text {
     margin: 0;
     padding: 0;
