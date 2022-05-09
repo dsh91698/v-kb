@@ -56,10 +56,12 @@ function createKeyboard(isRussian) { // keyboard create
     document.body.append(keyboard);
 
     let message = createNewElement('div', 'message', '');
-    let messageText = createNewElement('h2', 'header-text', 'Lang.switching: Alt + Control'); // message
-    let messageTextSub = createNewElement('h2', 'header-text', 'Virtual keyboard made in Windows & Mac'); // message
+    let messageText = createNewElement('h1', 'header-text', 'Lang.switching: Alt + Control(Win); Option + Control(Mac))'); // message
+    let messageTextSub = createNewElement('h2', 'header-text-sub', 'Virtual keyboard made on Windows.'); // message
+    let messageTextSubMac = createNewElement('h2', 'header-text-sub', 'Known issue on Mac: push keyboard CapsLock twice for switch-on/off'); // message issue on Mac
     message.append(messageText);
     message.append(messageTextSub);
+    message.append(messageTextSubMac);
     document.body.append(message);
 
 }

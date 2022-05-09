@@ -449,15 +449,23 @@ body {
   margin: 20px auto;
 }
 
+.header-text-sub {
+  margin: 0;
+  padding: 0;
+  color: #ee9b00;
+}
+
 .header-text {
   margin: 0;
   padding: 0;
+  color: #9b2226;
 }
 
 .container {
   gap: 3px;
   flex-wrap: wrap;
   max-width: 1190px;
+  width: 1190px;
   margin: 0 auto;
   padding: 0;
   display: flex;

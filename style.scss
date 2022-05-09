@@ -125,15 +125,23 @@ body {
 }
 
 
+.header-text-sub {
+    margin: 0;
+    padding: 0;
+    color: $color-font;
+}
+
 .header-text {
     margin: 0;
     padding: 0;
+    color: $ruby-red;
 }
 
 .container {
     gap: 3px;
     flex-wrap: wrap;
     max-width: $size-keyboard-width;
+    width: $size-keyboard-width;
     margin: 0 auto;
     padding: 0;
     display: flex;
