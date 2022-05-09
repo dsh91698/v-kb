@@ -4,21 +4,24 @@ import { keysAll } from './assets/js/_kb_layout.js';
 //console.log(keysAll);
 //===============================================================================//
 let isRussian = (localStorage.isRussian === 'true');
-console.log('befor onload - isRussian: ', isRussian);
+//console.log('befor onload - isRussian: ', isRussian);
 
 window.onload = function () {    // onload event
     //getLanguageForKeyboard(); // getting language from localStorage before creating keyboard
-    isRussian = (localStorage.isRussian === 'true') //? true : false;
-    console.log('onload - isRussian: ', isRussian);
+    isRussian = (localStorage.isRussian === 'true') 
+    //console.log('onload - isRussian: ', isRussian);
 
     isCapsLock = (localStorage.isCapsLock === 'true'); // caps-lock flag
     if (isCapsLock) {
         capsLockKey.classList.add('CL_on');
     }
+    textAreaZone.textContent = localStorage.textAreaZonetextContent
 }
-console.log('after onload - isRussian: ', isRussian);
+//console.log('after onload - isRussian: ', isRussian);
 
-
+window.addEventListener("unload", function() {
+    localStorage.textAreaZonetextContent = textAreaZone.textContent
+  });
 
 
 function createNewElement(tag, className, text, shiftText = '') {
@@ -87,8 +90,8 @@ createKeyboard(isRussian);
 document.addEventListener('keydown', (event) => { 
     if (event.ctrlKey && event.altKey)  { 
         console.log('alt -cntrl key pressed');
-        //event.preventDefault();
-        //event.stopPropagation();
+        event.preventDefault(); // -?
+        event.stopPropagation(); // - ? do I need it?
         isRussian = !isRussian;
         setLanguageToLocalStorage();
         //let keyboard = document.querySelector('.keyboard');
