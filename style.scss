@@ -1,0 +1,224 @@
+// ========= - imports - =====================//
+
+//@use '../_normalize.scss'; // for win
+@import './_normalize.scss'; // for Mac
+//@import '../_fonts.scss';
+@import './_variables.scss';
+//@import "../normalize.scss/normalize";
+//@include normalize();
+//@use 'normalize';
+//----------------------------------------------------------------------------------------
+
+//=======================================================//
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    transition: 0.15s;
+    scroll-behavior: smooth;
+
+}
+
+a:hover,
+a:visited,
+a:link,
+a:active {
+    text-decoration: none;
+    //color: inherit;
+}
+
+li {
+    text-decoration: none;
+    list-style-type: none;
+}
+
+body {
+    //background-color: $color-background;
+    background: $color-background;
+
+}
+
+//----------------------------------------------------------------------------------------------------
+
+//======= Mixins ================================================//
+@mixin flexbox-center-all() {
+    display: flex;
+    align-items: flex-end;
+    //justify-items: center;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    text-decoration: none;
+}
+
+@mixin flexbox-row() {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+//================== - Mixins - ===================================//
+
+@mixin button() {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: $color-background;
+    border-radius: $border-radius-key;
+    border: $size-border-key solid $color-border;
+    padding-top: 9px;
+
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: $size-font-on-keys;
+    line-height: 22px;
+    letter-spacing: 0.06em;
+
+    /* color-dark-3xl */
+    color: $color-font; // font color
+
+    &:hover {
+        background-color: $color-hover;
+        color: $color-background;
+        border-radius: $border-radius-key-pressed;
+        box-shadow: 0 0 15px 5px $ruby-red;
+    }
+}
+
+//--------------------------------------------------------------------------------------------
+//=======================================================//
+//---------------------------------------------------------------------------------------------------------
+//=======================================================//
+
+.header {
+    display: flex;
+    flex-direction: column;
+    //background-color: red;
+    padding: 0 20px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    max-width: 1280px;
+    border-radius: $border-radius;
+    border: solid $size-border-main $color-border;
+    margin: 20px auto;
+}
+
+.message {
+    display: flex;
+    flex-direction: column;
+    //background-color: red;
+    padding: 0 20px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    max-width: 1280px;
+    border-radius: $border-radius;
+    border: solid $size-border-main $color-border;
+    margin: 20px auto;
+}
+
+
+.header-text-sub {
+    margin: 0;
+    padding: 0;
+    color: $color-font;
+}
+
+.header-text {
+    margin: 0;
+    padding: 0;
+    color: $ruby-red;
+}
+
+.container {
+    gap: 3px;
+    flex-wrap: wrap;
+    max-width: $size-keyboard-width;
+    width: $size-keyboard-width;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    background-color: $color-background-keyboard;
+    //padding: 0 20px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    border-radius: $border-radius;
+    border: solid $size-border-main $color-border;
+
+}
+
+.keyboard {
+    width: 100%;
+    height: auto;
+}
+
+.key_normal {
+    @include button();
+    width: $size-key-normal-width;
+    height: $size-key-normal-height;
+}
+
+.key_fn_long {
+    @include button();
+    width: $size-key-fn-long-width;
+    height: $size-key-normal-height;
+}
+
+.key_fn_short {
+    @include button();
+    width: $size-key-fn-short-width;
+    height: $size-key-normal-height;
+}
+
+.key_fn_shorter {
+    @include button();
+    width: $size-key-fn-shorter-width;
+    height: $size-key-normal-height;
+}
+
+
+.key_space {
+    @include button();
+    width: $size-key-space-width;
+    height: $size-key-normal-height;
+}
+
+.textarea{
+    white-space: pre-wrap;
+
+    display: flex;
+    padding: 0 10px;
+    text-align: left;
+
+    width: 98%;
+    height: 80%;
+
+    font-size: 25px;
+    line-height: 31px;
+    letter-spacing: 0.07em;
+    color: $color-font-textarea;
+
+    border-radius: $border-radius;
+    background-color: $color-background-textarea;
+
+    overflow: hidden;
+}
+
+.CL_on{
+background-color: $color-CL_on;
+}
+
+.key_pressed{
+    background-color: $color-CL_on;
+    border-radius: $border-radius-key-pressed;
+}

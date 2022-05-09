@@ -1,0 +1,84 @@
+
+//---------------------------  scheme ----------------------------------------------------
+$gradient-radial: radial-gradient(#001219ff, #005f73ff, #0a9396ff, #94d2bdff, #e9d8a6ff, #ee9b00ff, #ca6702ff, #bb3e03ff, #ae2012ff, #9b2226ff);
+/* SCSS HEX */
+$rich-black-fogra-29: #001219ff;
+$blue-sapphire: #005f73ff;
+$viridian-green: #0a9396ff;
+$middle-blue-green: #94d2bdff;
+$medium-champagne: #e9d8a6ff;
+$gamboge: #ee9b00ff;
+$alloy-orange: #ca6702ff;
+$rust: #bb3e03ff;
+$rufous: #ae2012ff;
+$ruby-red: #9b2226ff;
+
+
+/* SCSS HEX */
+$charcoal: #264653ff;
+$persian-green: #2a9d8fff;
+$maize-crayola: #e9c46aff;
+$sandy-brown: #f4a261ff;
+$burnt-sienna: #e76f51ff;
+//----------------------------------------------------------------------------------------
+
+
+// Colors ==========================
+//$color-background: $gradient-radial;
+$color-background: $charcoal;
+$color-background-keyboard:$persian-green;
+$color-hover: $burnt-sienna;
+$color-border: $gamboge;
+$color-font: $gamboge;
+$color-font-textarea: $rich-black-fogra-29;
+$color-background-textarea: $gamboge;
+$color-CL_on: green;
+//-----------------------------------------------------------------------------------------
+
+
+// === Sizes ==============================================================================
+$size-key-normal-width: 70px;
+$size-key-normal-height: 70px;
+//--------------------------------------------------------------------
+$size-font-on-keys: 21px;
+//----------------------------------------------------------------------------
+$size-border-main: 3px;
+$size-border-key: 1px;
+//------------------------------------------------------------------------------------
+$border-radius: 15px;
+$border-radius-key: 10px;
+$border-radius-key-pressed: calc($size-key-normal-width / 2);
+//-----------------------------------------------------------------------------------
+
+$size-key-fn-long-width: $size-key-normal-width*3;// enter, shift, caps-lock
+$size-key-fn-short-width:$size-key-normal-width*2; // control-key
+$size-key-fn-shorter-width:$size-key-normal-width*1.5; // alt-key
+
+
+$size-key-space-width: $size-key-normal-width*6;// space
+//-------------------------------------------------------------------------
+$size-keyboard-width: $size-key-normal-width*17;
+
+
+
+/* SCSS Gradient */
+// $gradient-top: linear-gradient(0deg, #264653ff, #2a9d8fff, #e9c46aff, #f4a261ff, #e76f51ff);
+// $gradient-right: linear-gradient(90deg, #264653ff, #2a9d8fff, #e9c46aff, #f4a261ff, #e76f51ff);
+// $gradient-bottom: linear-gradient(180deg, #264653ff, #2a9d8fff, #e9c46aff, #f4a261ff, #e76f51ff);
+// $gradient-left: linear-gradient(270deg, #264653ff, #2a9d8fff, #e9c46aff, #f4a261ff, #e76f51ff);
+// $gradient-top-right: linear-gradient(45deg, #264653ff, #2a9d8fff, #e9c46aff, #f4a261ff, #e76f51ff);
+// $gradient-bottom-right: linear-gradient(135deg, #264653ff, #2a9d8fff, #e9c46aff, #f4a261ff, #e76f51ff);
+// $gradient-top-left: linear-gradient(225deg, #264653ff, #2a9d8fff, #e9c46aff, #f4a261ff, #e76f51ff);
+// $gradient-bottom-left: linear-gradient(315deg, #264653ff, #2a9d8fff, #e9c46aff, #f4a261ff, #e76f51ff);
+// $gradient-radial: radial-gradient(#264653ff, #2a9d8fff, #e9c46aff, #f4a261ff, #e76f51ff);
+
+/* SCSS Gradient */
+// $gradient-top: linear-gradient(0deg, #001219ff, #005f73ff, #0a9396ff, #94d2bdff, #e9d8a6ff, #ee9b00ff, #ca6702ff, #bb3e03ff, #ae2012ff, #9b2226ff);
+// $gradient-right: linear-gradient(90deg, #001219ff, #005f73ff, #0a9396ff, #94d2bdff, #e9d8a6ff, #ee9b00ff, #ca6702ff, #bb3e03ff, #ae2012ff, #9b2226ff);
+// $gradient-bottom: linear-gradient(180deg, #001219ff, #005f73ff, #0a9396ff, #94d2bdff, #e9d8a6ff, #ee9b00ff, #ca6702ff, #bb3e03ff, #ae2012ff, #9b2226ff);
+// $gradient-left: linear-gradient(270deg, #001219ff, #005f73ff, #0a9396ff, #94d2bdff, #e9d8a6ff, #ee9b00ff, #ca6702ff, #bb3e03ff, #ae2012ff, #9b2226ff);
+// $gradient-top-right: linear-gradient(45deg, #001219ff, #005f73ff, #0a9396ff, #94d2bdff, #e9d8a6ff, #ee9b00ff, #ca6702ff, #bb3e03ff, #ae2012ff, #9b2226ff);
+// $gradient-bottom-right: linear-gradient(135deg, #001219ff, #005f73ff, #0a9396ff, #94d2bdff, #e9d8a6ff, #ee9b00ff, #ca6702ff, #bb3e03ff, #ae2012ff, #9b2226ff);
+// $gradient-top-left: linear-gradient(225deg, #001219ff, #005f73ff, #0a9396ff, #94d2bdff, #e9d8a6ff, #ee9b00ff, #ca6702ff, #bb3e03ff, #ae2012ff, #9b2226ff);
+// $gradient-bottom-left: linear-gradient(315deg, #001219ff, #005f73ff, #0a9396ff, #94d2bdff, #e9d8a6ff, #ee9b00ff, #ca6702ff, #bb3e03ff, #ae2012ff, #9b2226ff);
+// $gradient-radial: radial-gradient(#001219ff, #005f73ff, #0a9396ff, #94d2bdff, #e9d8a6ff, #ee9b00ff, #ca6702ff, #bb3e03ff, #ae2012ff, #9b2226ff);
