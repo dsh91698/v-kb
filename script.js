@@ -47,7 +47,7 @@ function createKeyboard(isRussian) { // keyboard create
     //let lang = (isRussian ? 'ru' : 'en');
     let lang;
     console.log(isRussian, 'isRussian - in create keyboard function');
-    (isRussian ? lang='en' : lang='ru');
+    (!isRussian ? lang='en' : lang='ru');
     let keyboard = createNewElement('div', 'keyboard', '');
     const keyboardContainer = createNewElement('div', 'container', '');
     keyboard.append(keyboardContainer);
