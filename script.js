@@ -1,15 +1,12 @@
 console.log('Virtual keyboard task');
 //===============================================================================//
 import { keysAll } from './assets/js/_kb_layout.js';
-//console.log(keysAll);
 //===============================================================================//
 let isRussian = (localStorage.isRussian === 'true');
-//console.log('befor onload - isRussian: ', isRussian);
 
 window.onload = function () {    // onload event
-    //getLanguageForKeyboard(); // getting language from localStorage before creating keyboard
+     // getting language from localStorage before creating keyboard
     isRussian = (localStorage.isRussian === 'true') 
-    //console.log('onload - isRussian: ', isRussian);
 
     isCapsLock = (localStorage.isCapsLock === 'true'); // caps-lock flag
     if (isCapsLock) {
@@ -17,7 +14,6 @@ window.onload = function () {    // onload event
     }
     textAreaZone.textContent = localStorage.textAreaZonetextContent
 }
-//console.log('after onload - isRussian: ', isRussian);
 
 window.addEventListener("unload", function() {
     localStorage.textAreaZonetextContent = textAreaZone.textContent
@@ -27,7 +23,6 @@ window.addEventListener("unload", function() {
 function createNewElement(tag, className, text, shiftText = '') {
     const element = document.createElement(tag);
     element.classList.add(className);
-    //element.textContent = text;
     shiftText ? element.innerHTML = shiftText + '<br />' : void 0; // if onshift attribute exists - add it to the element on new line
     element.innerHTML += `${text}`;
     return element;
@@ -40,14 +35,10 @@ function createSingleKey(className = 'key_normal', text = 'q', shiftText = '') {
 
 
 let header = createNewElement('header', 'header', '');
-//let headerText = createNewElement('h1', 'header-text', 'Virtual keyboard task'); // header on top
-//header.append(headerText);
 let textArea = createNewElement('div', 'textarea', ''); // place for text
 header.append(textArea);
 document.body.prepend(header);
-//let keyboard;
 function createKeyboard(isRussian) { // keyboard create
-    //let lang = (isRussian ? 'ru' : 'en');
     let lang;
     console.log(isRussian, 'isRussian - in create keyboard function');
     (!isRussian ? lang='en' : lang='ru');
@@ -55,7 +46,6 @@ function createKeyboard(isRussian) { // keyboard create
     const keyboardContainer = createNewElement('div', 'container', '');
     keyboard.append(keyboardContainer);
 
-    //Object.keys(keysAll.en).forEach(key => {
     Object.keys(keysAll[lang]).forEach(key => {
         let button = createSingleKey(keysAll[lang][key].className, keysAll[lang][key].key, keysAll[lang][key].onShift);
         button.dataset.code = keysAll[lang][key].code; // set dataset attribute - code
@@ -74,17 +64,11 @@ function createKeyboard(isRussian) { // keyboard create
 
 }
 
-// function getLanguageForKeyboard() {
-//     //get langv from localStorage
-//     localStorage.isRussian ? isRussian = (localStorage.isRussian === 'true') : isRussian = false;
-//     //createKeyboard(isRussian);
-// }
 
 function setLanguageToLocalStorage() {
     localStorage.isRussian = isRussian;
 }
 
-//getLanguageForKeyboard(); // getting language from localStorage before creating keyboard
 createKeyboard(isRussian);
 
 document.addEventListener('keydown', (event) => { 
@@ -94,9 +78,6 @@ document.addEventListener('keydown', (event) => {
         event.stopPropagation(); // - ? do I need it?
         isRussian = !isRussian;
         setLanguageToLocalStorage();
-        //let keyboard = document.querySelector('.keyboard');
-        //createKeyboard(isRussian);
-        //document.body.remove(keyboard);
         document.location.reload();
     }
 });
@@ -104,11 +85,9 @@ document.addEventListener('keydown', (event) => {
 // ================================================================================//
 
 let isShiftPressed = false; // global flag for shift
-//let shift;
 
 document.addEventListener('keydown', function (event) {
     // catch keydown event on Shift keys and sets global var isShiftPressed
-    //console.log('event.code keydown: ', event);
     if (event.code == 'ShiftRight' || event.code == 'ShiftLeft') {
         isShiftPressed = true;
     }  
@@ -116,7 +95,6 @@ document.addEventListener('keydown', function (event) {
 });
 
 document.addEventListener('keyup', function (event) {
-    //console.log('event.code keyup: ', event.code);
     if (event.code == 'ShiftRight' || event.code == 'ShiftLeft') {
         isShiftPressed = false;
     }
@@ -126,7 +104,6 @@ document.addEventListener('keyup', function (event) {
 //--------------------keystrocke catcher - start ----------------------------------------------------------------------------------------//
 let key;
 function keystrokeCatcher(event) { 
-    //console.log('keystrokeCatcher - keystroke - code:', event.code, event.type);
     key = document.querySelector(`[data-code="${event.code}"]`);
     event.preventDefault(); // tab-key - prevent tabulation
     event.stopPropagation(); // tab-key - prevent tabulation
@@ -182,10 +159,6 @@ keyboard.addEventListener('click', (event) => {
 //--------- mouse click catcher -----------------//
 
 function mouseClickCatcher(event) {
-    // console.log('mouseClickCatcher - mouse click - code:', event.target.dataset.code);
-    // console.log('mouseClickCatcher - mouse click - key:', event.target.dataset.key);
-    // console.log('mouseClickCatcher - mouse click - shift:', event.target.dataset.shift);
-
     if (event.target.dataset.code === 'Backspace') { // if back-space
         textAreaZone.textContent = textAreaZone.textContent.slice(0, -1); // delete last letter
     } else if (event.target.dataset.code === 'Enter') { // if enter
@@ -234,9 +207,6 @@ function isUpperCase(isCapsLock, isShiftPressed) {
 //-------------------------------------------------------------------------------------------------------------//
 
 function keyboardClickCatcher(key) {
-    // console.log('kbClickCatcher - key click - code:', key.dataset.code);
-    // console.log('kbClickCatcher - key click - key:', key.dataset.key);
-    // console.log('kbClickCatcher - key click - shift:', key.dataset.shift);
 
     if (key.dataset.code === 'Backspace') { // if back-space
         textAreaZone.textContent = textAreaZone.textContent.slice(0, -1); // delete last letter

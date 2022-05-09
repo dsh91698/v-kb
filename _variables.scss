@@ -47,7 +47,7 @@ $size-border-key: 1px;
 //------------------------------------------------------------------------------------
 $border-radius: 15px;
 $border-radius-key: 10px;
-$border-radius-key-pressed: $size-key-normal-width/2;
+$border-radius-key-pressed: calc($size-key-normal-width / 2);
 //-----------------------------------------------------------------------------------
 
 $size-key-fn-long-width: $size-key-normal-width*3;// enter, shift, caps-lock
