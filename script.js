@@ -3,6 +3,24 @@ console.log('Virtual keyboard task');
 import { keysAll } from './assets/js/_kb_layout.js';
 //console.log(keysAll);
 //===============================================================================//
+let isRussian = (localStorage.isRussian === 'true');
+console.log('befor onload - isRussian: ', isRussian);
+
+window.onload = function () {    // onload event
+    //getLanguageForKeyboard(); // getting language from localStorage before creating keyboard
+    isRussian = (localStorage.isRussian === 'true') //? true : false;
+    console.log('onload - isRussian: ', isRussian);
+
+    isCapsLock = (localStorage.isCapsLock === 'true'); // caps-lock flag
+    if (isCapsLock) {
+        capsLockKey.classList.add('CL_on');
+    }
+}
+console.log('after onload - isRussian: ', isRussian);
+
+
+
+
 function createNewElement(tag, className, text, shiftText = '') {
     const element = document.createElement(tag);
     element.classList.add(className);
@@ -25,8 +43,11 @@ let textArea = createNewElement('div', 'textarea', ''); // place for text
 header.append(textArea);
 document.body.prepend(header);
 
-function createKeyboard(langv = 'en') { // keyboard create
-    let lang = langv;
+function createKeyboard(isRussian) { // keyboard create
+    //let lang = (isRussian ? 'ru' : 'en');
+    let lang;
+    console.log(isRussian, 'isRussian - in create keyboard function');
+    (isRussian ? lang='en' : lang='ru');
     let keyboard = createNewElement('div', 'keyboard', '');
     const keyboardContainer = createNewElement('div', 'container', '');
     keyboard.append(keyboardContainer);
@@ -48,22 +69,39 @@ function createKeyboard(langv = 'en') { // keyboard create
     // let a = createSingleKey();
     // keyboardContainer.append(a);
     document.body.append(keyboard);
+
+    let headerText = createNewElement('h1', 'header-text', 'Virtual keyboard task'); // header on top
+    document.body.append(headerText);
+
 }
+
 
 
 //createKeyboard('ru');
 //TODO: save and restore from localStorage needs to be added
-let kbLang;
+
 function getLanguageForKeyboard() {
     //get langv from localStorage
-    localStorage.kbLang ? kbLang = localStorage.kbLang : kbLang = 'en';
+    localStorage.isRussian ? isRussian = (localStorage.isRussian === 'true') : isRussian = false;
+    //createKeyboard(isRussian);
 }
-function setLanguageToLocalStorage(kbLang) {
-    localStorage.kbLang = kbLang;
+function setLanguageToLocalStorage() {
+    localStorage.isRussian = isRussian;
 }
 
-getLanguageForKeyboard(); // getting language from localStorage before creating keyboard
-createKeyboard(kbLang);
+//getLanguageForKeyboard(); // getting language from localStorage before creating keyboard
+createKeyboard(isRussian);
+
+document.addEventListener('keydown', (event) => { 
+    if (event.ctrlKey && event.altKey)  { 
+        console.log('alt -cntrl key pressed');
+        //event.preventDefault();
+        //event.stopPropagation();
+        isRussian = !isRussian;
+        setLanguageToLocalStorage();
+        //createKeyboard(isRussian);
+    }
+});
 
 // ================================================================================//
 
@@ -72,7 +110,7 @@ let isShiftPressed = false; // global flag for shift
 
 document.addEventListener('keydown', function (event) {
     // catch keydown event on Shift keys and sets global var isShiftPressed
-    console.log('event.code keydown: ', event);
+    //console.log('event.code keydown: ', event);
     if (event.code == 'ShiftRight' || event.code == 'ShiftLeft') {
         isShiftPressed = true;
     }  
@@ -80,7 +118,7 @@ document.addEventListener('keydown', function (event) {
 });
 
 document.addEventListener('keyup', function (event) {
-    console.log('event.code keyup: ', event.code);
+    //console.log('event.code keyup: ', event.code);
     if (event.code == 'ShiftRight' || event.code == 'ShiftLeft') {
         isShiftPressed = false;
     }
@@ -108,12 +146,6 @@ function setIsCapsLockToLocalStorage() {
     console.log('setIsCapsLockToLocalStorage: ', localStorage.isCapsLock);
 }
 
-window.onload = function () {    // onload event
-    isCapsLock = (localStorage.isCapsLock === 'true'); // caps-lock flag
-    if (isCapsLock) {
-        capsLockKey.classList.add('CL_on');
-    }
-}
 
 //TODO: save and restore from localStorage needs to be added
 let isCapsLock;
@@ -152,9 +184,9 @@ keyboard.addEventListener('click', (event) => {
 //--------- mouse click catcher -----------------//
 
 function mouseClickCatcher(event) {
-    console.log('mouseClickCatcher - mouse click - code:', event.target.dataset.code);
-    console.log('mouseClickCatcher - mouse click - key:', event.target.dataset.key);
-    console.log('mouseClickCatcher - mouse click - shift:', event.target.dataset.shift);
+    // console.log('mouseClickCatcher - mouse click - code:', event.target.dataset.code);
+    // console.log('mouseClickCatcher - mouse click - key:', event.target.dataset.key);
+    // console.log('mouseClickCatcher - mouse click - shift:', event.target.dataset.shift);
 
     if (event.target.dataset.code === 'Backspace') { // if back-space
         textAreaZone.textContent = textAreaZone.textContent.slice(0, -1); // delete last letter
@@ -204,9 +236,9 @@ function isUpperCase(isCapsLock, isShiftPressed) {
 //-------------------------------------------------------------------------------------------------------------//
 
 function keyboardClickCatcher(key) {
-    console.log('kbClickCatcher - key click - code:', key.dataset.code);
-    console.log('kbClickCatcher - key click - key:', key.dataset.key);
-    console.log('kbClickCatcher - key click - shift:', key.dataset.shift);
+    // console.log('kbClickCatcher - key click - code:', key.dataset.code);
+    // console.log('kbClickCatcher - key click - key:', key.dataset.key);
+    // console.log('kbClickCatcher - key click - shift:', key.dataset.shift);
 
     if (key.dataset.code === 'Backspace') { // if back-space
         textAreaZone.textContent = textAreaZone.textContent.slice(0, -1); // delete last letter
